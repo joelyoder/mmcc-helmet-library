@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__claude-in-chrome__navigate",
+      "WebFetch(domain:www.canva.com)",
+      "Bash(mkdir -p /private/tmp/claude-501/-Users-joel-git-mmcc-helmet-library/cb9e5612-bde1-40a7-a6f9-682bd253b32e/scratchpad/scrape/images)",
+      "Bash(mkdir -p /Users/joel/git/mmcc-helmet-library/scrape/images)",
+      "Bash(chmod +x /Users/joel/git/mmcc-helmet-library/scrape/extract_data.py)",
+      "Bash(chmod +x /private/tmp/claude-501/-Users-joel-git-mmcc-helmet-library/cb9e5612-bde1-40a7-a6f9-682bd253b32e/scratchpad/scrape_all_pages.sh)",
+      "Bash(chmod +x /private/tmp/claude-501/-Users-joel-git-mmcc-helmet-library/cb9e5612-bde1-40a7-a6f9-682bd253b32e/scratchpad/collect_remaining_pages.sh)",
+      "Bash(bash /private/tmp/claude-501/-Users-joel-git-mmcc-helmet-library/cb9e5612-bde1-40a7-a6f9-682bd253b32e/scratchpad/collect_remaining_pages.sh)",
+      "Bash(cat)",
+      "Bash(chmod +x /tmp/collect_pages_255_259.sh)",
+      "Bash(bash /tmp/collect_pages_255_259.sh)",
+      "Bash(awk '{print $9, \"\\(\" $5 \"\\)\"}')",
+      "Bash(python3 -m json.tool)",
+      "Bash(node scrape/build-csv.js)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Update helmet data: 195 helmets from latest scrape run *)",
+      "Bash(git push *)"
+    ]
+  }
+}
