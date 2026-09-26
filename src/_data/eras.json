@@ -1,0 +1,16 @@
+[
+  { "name": "Early Crusader", "slug": "early-crusader" },
+  { "name": "Crusader", "slug": "crusader" },
+  { "name": "Neo Crusader", "slug": "neo-crusader" },
+  { "name": "Modern", "slug": "modern" },
+  { "name": "Legacy", "slug": "legacy" },
+  {
+    "name": "Pilot w/ Acc.",
+    "slug": "pilot-w-acc",
+    "note": "\"w/ Acc.\" is short for \"With accessories\""
+  },
+  { "name": "Covert", "slug": "covert" },
+  { "name": "Mercenary", "slug": "mercenary" },
+  { "name": "Survivor", "slug": "survivor" },
+  { "name": "Master", "slug": "master" }
+]

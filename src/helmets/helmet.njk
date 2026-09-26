@@ -1,0 +1,54 @@
+---
+layout: base.njk
+pagination:
+  data: helmets
+  size: 1
+  alias: helmet
+permalink: "/helmets/{{ helmet.slug }}/"
+eleventyComputed:
+  title: "{{ helmet.name }}"
+---
+{% set maker = makers | findMaker(helmet.maker) %}
+
+<p><a href="/makers/{{ helmet.maker | slug }}/">&larr; {{ helmet.maker }}</a></p>
+
+<div class="helmet-detail{% if not helmet.approvable %} helmet-detail--not-approvable{% endif %}">
+  <div class="helmet-detail__images">
+    {% if helmet.images.length %}
+      {% for img in helmet.images %}
+        <img src="{{ img }}" alt="{{ helmet.name }} by {{ helmet.maker }}">
+      {% endfor %}
+    {% else %}
+      <div class="helmet-card__no-image">No photo yet</div>
+    {% endif %}
+  </div>
+
+  <div class="helmet-detail__body">
+    <h1>{{ helmet.name }}</h1>
+    <p class="helmet-card__maker">by <a href="/makers/{{ helmet.maker | slug }}/">{{ helmet.maker }}</a></p>
+
+    {% if not helmet.approvable %}
+      <p class="helmet-card__badge helmet-card__badge--no">Not currently approvable for club use</p>
+    {% elif helmet.eras.length %}
+      <h2>Approvable for</h2>
+      <ul class="helmet-card__eras">
+        {% for era in helmet.eras %}
+          <li><a href="/eras/{{ era | canonicalEra | slug }}/">{{ era }}</a></li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    {% if helmet.notes %}<p class="helmet-card__notes">{{ helmet.notes }}</p>{% endif %}
+
+    <div class="helmet-detail__links">
+      {% if helmet.buyLink %}
+        <a class="button" href="{{ helmet.buyLink }}" target="_blank" rel="noopener">Buy this helmet &rarr;</a>
+      {% elif maker and maker.website %}
+        <a class="button" href="{{ maker.website }}" target="_blank" rel="noopener">Visit {{ helmet.maker }}'s store &rarr;</a>
+      {% endif %}
+      {% if helmet.modelLink %}
+        <a class="button button--secondary" href="{{ helmet.modelLink }}" target="_blank" rel="noopener">Model reference &rarr;</a>
+      {% endif %}
+    </div>
+  </div>
+</div>

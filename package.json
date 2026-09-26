@@ -1,0 +1,15 @@
+{
+  "name": "mmcc-helmet-library",
+  "version": "1.0.0",
+  "description": "MMCC Helmet Reference Library - static site",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "papaparse": "^5.4.1",
+    "slugify": "^1.6.6"
+  }
+}

@@ -1,0 +1,16 @@
+---
+layout: base.njk
+title: Browse by Era / Style
+permalink: /eras/
+---
+<h1>Browse by Era / Style</h1>
+<ul class="index-list">
+  {% for era in eras %}
+    {% set count = (helmets | helmetsForEra(era.name)).length %}
+    <li>
+      <a href="/eras/{{ era.slug }}/">{{ era.name }}</a>
+      <span class="index-list__count">{{ count }} helmet{{ "s" if count != 1 }}</span>
+      {% if era.note %}<div class="index-list__note">{{ era.note }}</div>{% endif %}
+    </li>
+  {% endfor %}
+</ul>

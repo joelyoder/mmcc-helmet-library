@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Browse by Maker
+permalink: /makers/
+---
+<h1>Browse by Maker</h1>
+<ul class="index-list">
+  {% for maker in makers | sort(attribute="name") %}
+    {% set count = (helmets | helmetsForMaker(maker.name)).length %}
+    <li>
+      <a href="/makers/{{ maker.name | slug }}/">{{ maker.name }}</a>
+      <span class="index-list__count">{{ count }} helmet{{ "s" if count != 1 }}</span>
+    </li>
+  {% endfor %}
+</ul>

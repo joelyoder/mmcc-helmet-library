@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Welcome
+---
+<section class="welcome">
+  <h1>{{ site.title or "MMCC Helmet Reference Library" }}</h1>
+  <p class="welcome__intro">{{ site.intro }}</p>
+
+  {% if site.notes %}
+  <div class="notice">
+    <h2>Important Notes</h2>
+    <p>{{ site.notes }}</p>
+  </div>
+  {% endif %}
+
+  <div class="home-links">
+    <a class="button" href="/eras/">Browse by Era / Style &rarr;</a>
+    <a class="button" href="/makers/">Browse by Maker &rarr;</a>
+  </div>
+
+  <p class="stat-line">{{ helmets.length }} helmets from {{ makers.length }} makers</p>
+</section>

@@ -1,0 +1,26 @@
+---
+layout: base.njk
+pagination:
+  data: makers
+  size: 1
+  alias: maker
+permalink: "/makers/{{ maker.name | slug }}/"
+eleventyComputed:
+  title: "{{ maker.name }}"
+---
+{% from "macros.njk" import helmetCard %}
+
+<p><a href="/makers/">&larr; All makers</a></p>
+<h1>{{ maker.name }}</h1>
+{% if maker.website %}<p><a href="{{ maker.website }}" target="_blank" rel="noopener">Visit maker's site/store &rarr;</a></p>{% endif %}
+{% if maker.notes %}<p class="helmet-card__notes">{{ maker.notes }}</p>{% endif %}
+
+{% set list = helmets | helmetsForMaker(maker.name) %}
+{% if list.length %}
+  <p class="stat-line">{{ list.length }} helmet{{ "s" if list.length != 1 }}</p>
+  <div class="helmet-grid">
+    {% for h in list %}{{ helmetCard(h, makers) }}{% endfor %}
+  </div>
+{% else %}
+  <p>No helmets listed for this maker yet.</p>
+{% endif %}

@@ -1,0 +1,40 @@
+{% macro helmetCard(h, makers) %}
+  {% set maker = makers | findMaker(h.maker) %}
+  <article class="helmet-card{% if not h.approvable %} helmet-card--not-approvable{% endif %}">
+    <a class="helmet-card__images" href="/helmets/{{ h.slug }}/">
+      {% if h.images.length %}
+        {% for img in h.images %}
+          <img src="{{ img }}" alt="{{ h.name }} by {{ h.maker }}" loading="lazy">
+        {% endfor %}
+      {% else %}
+        <div class="helmet-card__no-image">No photo yet</div>
+      {% endif %}
+    </a>
+    <div class="helmet-card__body">
+      <h3 class="helmet-card__name"><a href="/helmets/{{ h.slug }}/">{{ h.name }}</a></h3>
+      <p class="helmet-card__maker">
+        by
+        {% if maker and maker.website %}
+          <a href="{{ maker.website }}" target="_blank" rel="noopener">{{ h.maker }}</a>
+        {% else %}
+          <a href="/makers/{{ h.maker | slug }}/">{{ h.maker }}</a>
+        {% endif %}
+      </p>
+      {% if not h.approvable %}
+        <p class="helmet-card__badge helmet-card__badge--no">Not currently approvable for club use</p>
+      {% elif h.eras.length %}
+        <ul class="helmet-card__eras">
+          {% for era in h.eras %}
+            <li><a href="/eras/{{ era | canonicalEra | slug }}/">{{ era }}</a></li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if h.modelLink %}
+        <p><a href="{{ h.modelLink }}" target="_blank" rel="noopener">Model reference &rarr;</a></p>
+      {% endif %}
+      {% if h.notes %}
+        <p class="helmet-card__notes">{{ h.notes }}</p>
+      {% endif %}
+    </div>
+  </article>
+{% endmacro %}

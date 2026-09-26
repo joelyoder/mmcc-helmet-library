@@ -1,0 +1,25 @@
+---
+layout: base.njk
+pagination:
+  data: eras
+  size: 1
+  alias: era
+permalink: "/eras/{{ era.slug }}/"
+eleventyComputed:
+  title: "{{ era.name }}"
+---
+{% from "macros.njk" import helmetCard %}
+
+<p><a href="/eras/">&larr; All eras/styles</a></p>
+<h1>{{ era.name }}</h1>
+{% if era.note %}<p class="index-list__note">{{ era.note }}</p>{% endif %}
+
+{% set list = helmets | helmetsForEra(era.name) %}
+{% if list.length %}
+  <p class="stat-line">{{ list.length }} approved helmet{{ "s" if list.length != 1 }}</p>
+  <div class="helmet-grid">
+    {% for h in list %}{{ helmetCard(h, makers) }}{% endfor %}
+  </div>
+{% else %}
+  <p>No helmets are currently listed as approved for this era/style.</p>
+{% endif %}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title or site.title }} · MMCC Helmet Library</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">{{ site.title or "MMCC Helmet Reference Library" }}</a>
+    <nav class="site-nav">
+      <a href="/eras/">Browse by Era/Style</a>
+      <a href="/makers/">Browse by Maker</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <p>MMCC Helmet Reference Library — a community reference, not the official CRL.</p>
+  </footer>
+</body>
+</html>
