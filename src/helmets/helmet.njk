@@ -8,6 +8,7 @@ permalink: "/helmets/{{ helmet.slug }}/"
 eleventyComputed:
   title: "{{ helmet.name }}"
 ---
+{% from "macros.njk" import mando %}
 {% set maker = makers | findMaker(helmet.maker) %}
 
 <p><a href="/makers/{{ helmet.maker | slug }}/">&larr; {{ helmet.maker }}</a></p>
@@ -24,7 +25,7 @@ eleventyComputed:
   </div>
 
   <div class="helmet-detail__body">
-    <h1>{{ helmet.name }}</h1>
+    <h1>{{ helmet.name }}{{ mando(helmet.name) }}</h1>
     <p class="helmet-card__maker">by <a href="/makers/{{ helmet.maker | slug }}/">{{ helmet.maker }}</a></p>
 
     {% if not helmet.approvable %}

@@ -18,6 +18,7 @@ function canonicalEraName(tag) {
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/fonts");
 
   eleventyConfig.addFilter("slug", (str) =>
     slugify(String(str || ""), { lower: true, strict: true })

@@ -1,3 +1,5 @@
+{% macro mando(text) %}<span class="mando-flourish" aria-hidden="true">{{ text }}</span>{% endmacro %}
+
 {% macro helmetCard(h, makers) %}
   {% set maker = makers | findMaker(h.maker) %}
   <article class="helmet-card{% if not h.approvable %} helmet-card--not-approvable{% endif %}">

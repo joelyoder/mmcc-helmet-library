@@ -4,11 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title or site.title }} · MMCC Helmet Library</title>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="/">{{ site.title or "MMCC Helmet Reference Library" }}</a>
+    <a class="brand" href="/">
+      <img class="brand__sigil" src="/images/favicon.svg" alt="" width="28" height="28">
+      <span class="brand__text">
+        {{ site.title or "MMCC Helmet Reference Library" }}
+        <span class="mando-flourish" aria-hidden="true">{{ site.title or "MMCC Helmet Reference Library" }}</span>
+      </span>
+    </a>
     <nav class="site-nav">
       <a href="/eras/">Browse by Era/Style</a>
       <a href="/makers/">Browse by Maker</a>

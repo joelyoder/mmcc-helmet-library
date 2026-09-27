@@ -3,7 +3,8 @@ layout: base.njk
 title: Browse by Era / Style
 permalink: /eras/
 ---
-<h1>Browse by Era / Style</h1>
+{% from "macros.njk" import mando %}
+<h1>Browse by Era / Style{{ mando("Browse by Era / Style") }}</h1>
 <ul class="index-list">
   {% for era in eras %}
     {% set count = (helmets | helmetsForEra(era.name)).length %}

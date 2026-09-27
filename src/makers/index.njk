@@ -3,7 +3,8 @@ layout: base.njk
 title: Browse by Maker
 permalink: /makers/
 ---
-<h1>Browse by Maker</h1>
+{% from "macros.njk" import mando %}
+<h1>Browse by Maker{{ mando("Browse by Maker") }}</h1>
 <ul class="index-list">
   {% for maker in makers | sort(attribute="name") %}
     {% set count = (helmets | helmetsForMaker(maker.name)).length %}

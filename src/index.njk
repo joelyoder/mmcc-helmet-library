@@ -2,8 +2,9 @@
 layout: base.njk
 title: Welcome
 ---
+{% from "macros.njk" import mando %}
 <section class="welcome">
-  <h1>{{ site.title or "MMCC Helmet Reference Library" }}</h1>
+  <h1>{{ site.title or "MMCC Helmet Reference Library" }}{{ mando(site.title or "MMCC Helmet Reference Library") }}</h1>
   <p class="welcome__intro">{{ site.intro }}</p>
 
   {% if site.notes %}

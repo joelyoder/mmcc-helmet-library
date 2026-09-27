@@ -8,10 +8,10 @@ permalink: "/makers/{{ maker.name | slug }}/"
 eleventyComputed:
   title: "{{ maker.name }}"
 ---
-{% from "macros.njk" import helmetCard %}
+{% from "macros.njk" import helmetCard, mando %}
 
 <p><a href="/makers/">&larr; All makers</a></p>
-<h1>{{ maker.name }}</h1>
+<h1>{{ maker.name }}{{ mando(maker.name) }}</h1>
 {% if maker.website %}<p><a href="{{ maker.website }}" target="_blank" rel="noopener">Visit maker's site/store &rarr;</a></p>{% endif %}
 {% if maker.notes %}<p class="helmet-card__notes">{{ maker.notes }}</p>{% endif %}
 

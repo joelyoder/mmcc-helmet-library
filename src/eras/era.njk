@@ -8,10 +8,10 @@ permalink: "/eras/{{ era.slug }}/"
 eleventyComputed:
   title: "{{ era.name }}"
 ---
-{% from "macros.njk" import helmetCard %}
+{% from "macros.njk" import helmetCard, mando %}
 
 <p><a href="/eras/">&larr; All eras/styles</a></p>
-<h1>{{ era.name }}</h1>
+<h1>{{ era.name }}{{ mando(era.name) }}</h1>
 {% if era.note %}<p class="index-list__note">{{ era.note }}</p>{% endif %}
 
 {% set list = helmets | helmetsForEra(era.name) %}
