@@ -30,14 +30,18 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("canonicalEra", canonicalEraName);
 
+  function byName(a, b) {
+    return a.name.localeCompare(b.name);
+  }
+
   eleventyConfig.addFilter("helmetsForEra", (helmets, eraName) =>
-    (helmets || []).filter((h) =>
-      h.eras.some((tag) => canonicalEraName(tag) === eraName)
-    )
+    (helmets || [])
+      .filter((h) => h.eras.some((tag) => canonicalEraName(tag) === eraName))
+      .sort(byName)
   );
 
   eleventyConfig.addFilter("helmetsForMaker", (helmets, makerName) =>
-    (helmets || []).filter((h) => h.maker === makerName)
+    (helmets || []).filter((h) => h.maker === makerName).sort(byName)
   );
 
   return {
