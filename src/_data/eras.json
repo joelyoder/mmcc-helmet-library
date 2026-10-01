@@ -1,7 +1,8 @@
 [
   { "name": "Early Crusader", "slug": "early-crusader" },
-  { "name": "Crusader", "slug": "crusader" },
   { "name": "Neo Crusader", "slug": "neo-crusader" },
+  { "name": "Comic Crusader", "slug": "comic-crusader" },
+  { "name": "Tech Crusader", "slug": "tech-crusader" },
   { "name": "Modern", "slug": "modern" },
   { "name": "Legacy", "slug": "legacy" },
   {

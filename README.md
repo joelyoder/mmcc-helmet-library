@@ -38,7 +38,7 @@ Create one Google Sheet with three tabs, named exactly:
 |---|---|
 | `Name` | Helmet name |
 | `Maker` | Maker's name — must match a row in the `Makers` tab exactly |
-| `Eras` | Semicolon-separated list of era/style tags this helmet is approved for, e.g. `Modern; Legacy; Covert`. Leave blank if not approvable. Valid tags: Early Crusader, Crusader, Neo Crusader, Modern, Legacy, Pilot w/ Acc., Covert, Mercenary, Survivor, Master |
+| `Eras` | Semicolon-separated list of era/style tags this helmet is approved for, e.g. `Modern; Legacy; Covert`. Leave blank if not approvable. Valid tags: Early Crusader, Neo Crusader, Comic Crusader, Tech Crusader, Modern, Legacy, Pilot w/ Acc., Covert, Mercenary, Survivor, Master |
 | `Approvable` | `Yes` or `No`. If `No`, the site shows it as "not currently approvable" instead of an era list. |
 | `Images` | Semicolon-separated photo URLs (or `/images/helmets/...` paths for images bundled in the site itself). Paste a direct image link — from Imgur, a Google Drive/Photos share link set to "anyone with the link", or the maker's own site. |
 | `BuyLink` | Optional — a direct link to *this specific helmet's* product/listing page, if the maker has one. Leave blank to fall back to the maker's general site (see below). |
