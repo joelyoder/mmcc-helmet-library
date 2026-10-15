@@ -250,3 +250,14 @@ h1, h2, h3 {
 @media (max-width: 700px) {
   .helmet-detail { grid-template-columns: 1fr; }
 }
+
+.pagefind-ui {
+  --pagefind-ui-primary: var(--gold);
+  --pagefind-ui-text: var(--ink);
+  --pagefind-ui-background: var(--panel);
+  --pagefind-ui-border: var(--border);
+  --pagefind-ui-tag: var(--steel);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-border-radius: 0;
+  --pagefind-ui-font: inherit;
+}

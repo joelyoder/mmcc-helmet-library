@@ -1,4 +1,4 @@
-{% macro mando(text) %}<span class="mando-flourish" aria-hidden="true">{{ text }}</span>{% endmacro %}
+{% macro mando(text) %}<span class="mando-flourish" aria-hidden="true" data-pagefind-ignore>{{ text }}</span>{% endmacro %}
 
 {% macro helmetCard(h, makers) %}
   {% set maker = makers | findMaker(h.maker) %}

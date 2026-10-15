@@ -26,7 +26,7 @@ eleventyComputed:
 
   <div class="helmet-detail__body">
     <h1>{{ helmet.name }}{{ mando(helmet.name) }}</h1>
-    <p class="helmet-card__maker">by <a href="/makers/{{ helmet.maker | slug }}/">{{ helmet.maker }}</a></p>
+    <p class="helmet-card__maker" data-pagefind-filter="Maker:{{ helmet.maker }}">by <a href="/makers/{{ helmet.maker | slug }}/">{{ helmet.maker }}</a></p>
 
     {% if not helmet.approvable %}
       <p class="helmet-card__badge helmet-card__badge--no">Not currently approvable for club use</p>
@@ -34,7 +34,7 @@ eleventyComputed:
       <h2>Approvable for</h2>
       <ul class="helmet-card__eras">
         {% for era in helmet.eras %}
-          <li><a href="/eras/{{ era | canonicalEra | slug }}/">{{ era }}</a></li>
+          <li data-pagefind-filter="Era:{{ era | canonicalEra }}"><a href="/eras/{{ era | canonicalEra | slug }}/">{{ era }}</a></li>
         {% endfor %}
       </ul>
     {% endif %}

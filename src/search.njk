@@ -1,0 +1,15 @@
+---
+layout: base.njk
+title: Search
+permalink: /search/
+---
+{% from "macros.njk" import mando %}
+<h1>Search{{ mando("Search") }}</h1>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<div id="search"></div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", function () {
+    new PagefindUI({ element: "#search", showImages: false });
+  });
+</script>

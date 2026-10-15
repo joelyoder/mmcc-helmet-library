@@ -5,10 +5,11 @@
   "private": true,
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy"
+    "build": "eleventy && pagefind --site _site"
   },
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "pagefind": "^1.5.2",
     "papaparse": "^5.4.1",
     "slugify": "^1.6.6"
   }
